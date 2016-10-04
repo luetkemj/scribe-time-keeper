@@ -9,7 +9,7 @@ export default function TestHomeContainer() {
       <h1>Test Home</h1>
       <ul className={style.list}>
         <li className={style.listItem}>
-          <Link to="/">Test</Link>
+          <Link to="/time-keeper">Time Keeper</Link>
         </li>
       </ul>
     </div>
