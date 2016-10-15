@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import style from './time-keeper.component.scss';
 
-export default function TimeKeeper({ day, time, sky, rotation }) {
+export default function TimeKeeper({ day, time, sky, rotation, increment }) {
   const counterRotation = rotation * -1;
   const rotate = {
     transform: `rotate(${rotation}deg)`,
@@ -24,23 +24,23 @@ export default function TimeKeeper({ day, time, sky, rotation }) {
   }
 
   function increment6s() {
-    console.log('inc6');
+    increment(6000);
   }
 
   function increment5m() {
-    console.log('inc5');
+    increment(300000);
   }
 
   function increment10m() {
-    console.log('inc10');
+    increment(600000);
   }
 
   function increment1h() {
-    console.log('inc1');
+    increment(3600000);
   }
 
   function increment8h() {
-    console.log('inc8');
+    increment(28800000);
   }
 
   const hours = leadingZero(time.hours);
@@ -102,4 +102,5 @@ TimeKeeper.propTypes = {
   time: PropTypes.object.isRequired,
   sky: PropTypes.string.isRequired,
   rotation: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired,
 };
