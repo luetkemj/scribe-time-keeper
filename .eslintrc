@@ -24,6 +24,7 @@
     "no-underscore-dangle": 0,
     "no-unsafe-negation": 0,
     "react/forbid-prop-types": 0,
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "react/no-unused-prop-types": [0, { skipShapeProps: true }]
   }
 }

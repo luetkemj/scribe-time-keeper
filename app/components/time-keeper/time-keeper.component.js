@@ -1,8 +1,30 @@
 import React, { PropTypes } from 'react';
 
+import { leadingZero } from '../../lib/utils';
+
 import style from './time-keeper.component.scss';
 
-export default function TimeKeeper({ day, time, sky, rotation, increment }) {
+export default function TimeKeeper({ day, time, sky, rotation, initialMs, increment }) {
+  const increment6s = () => {
+    increment(initialMs, 6000);
+  };
+
+  const increment5m = () => {
+    increment(initialMs, 300000);
+  };
+
+  const increment10m = () => {
+    increment(initialMs, 600000);
+  };
+
+  const increment1h = () => {
+    increment(initialMs, 3600000);
+  };
+
+  const increment8h = () => {
+    increment(initialMs, 28800000);
+  };
+
   const counterRotation = rotation * -1;
   const rotate = {
     transform: `rotate(${rotation}deg)`,
@@ -11,37 +33,6 @@ export default function TimeKeeper({ day, time, sky, rotation, increment }) {
     transform: `rotate(${counterRotation}deg)`,
   };
   const skyColor = style[sky];
-
-  function leadingZero(number) {
-    let newNumber;
-    if (number < 10) {
-      newNumber = `0${number}`;
-    } else {
-      newNumber = number;
-    }
-
-    return newNumber;
-  }
-
-  function increment6s() {
-    increment(6000);
-  }
-
-  function increment5m() {
-    increment(300000);
-  }
-
-  function increment10m() {
-    increment(600000);
-  }
-
-  function increment1h() {
-    increment(3600000);
-  }
-
-  function increment8h() {
-    increment(28800000);
-  }
 
   const hours = leadingZero(time.hours);
   const minutes = leadingZero(time.minutes);
@@ -103,4 +94,5 @@ TimeKeeper.propTypes = {
   sky: PropTypes.string.isRequired,
   rotation: PropTypes.number.isRequired,
   increment: PropTypes.func.isRequired,
+  initialMs: PropTypes.number.isRequired,
 };
