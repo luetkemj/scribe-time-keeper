@@ -2,13 +2,13 @@
 
 Scribe Time Keeper is a simple time tracking tool for Dungeon Masters. It displays a simple sun and moon clock with the current day and time (see screen shots). It also includes buttons for advancing time in increments of 6s, 5m, 10m, 1h, and 8h. Time is saved in your browser's local storage so you can keep the clock running from session to session.
 
-[night](http://i.imgur.com/PqAVRz1.png)
+![night](http://i.imgur.com/PqAVRz1.png)
 
-[dawn](http://i.imgur.com/ApLFwLU.png)
+![dawn](http://i.imgur.com/ApLFwLU.png)
 
-[day](http://i.imgur.com/t8ZAF3D.png)
+![day](http://i.imgur.com/t8ZAF3D.png)
 
-[dusk](http://i.imgur.com/a0kYUzY.png)
+![dusk](http://i.imgur.com/a0kYUzY.png)
 
 ## Run the Application ##
 
