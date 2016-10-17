@@ -6,6 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import configureStore from './store/configureStore';
 import App from './containers/app/app.container';
+import TimeKeeperContainer from './containers/time-keeper-container/time-keeper-container';
 
 const store = configureStore(undefined, browserHistory);
 
@@ -14,7 +15,9 @@ const history = syncHistoryWithStore(browserHistory, store);
 render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} />
+      <Route component={App}>
+        <Route path="/" component={TimeKeeperContainer} />
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('app')
