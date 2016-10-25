@@ -23,9 +23,9 @@ export default class TimeKeeperTestContainer extends Component {
     };
   }
 
-  increment = (milliseconds) => {
+  increment = (initialMs, milliseconds) => {
     // add milliseconds to current time parsing it into days, hours, minutes, seconds
-    const ms = this.state.ms += milliseconds;
+    const ms = initialMs + milliseconds;
     const days = this.parseMs(ms, 86400000);
     const hours = this.parseMs(days.remainder, 3600000);
     const minutes = this.parseMs(hours.remainder, 60000);
@@ -77,6 +77,7 @@ export default class TimeKeeperTestContainer extends Component {
           sky={this.state.sky}
           rotation={this.state.rotation}
           increment={this.increment}
+          initialMs={this.state.ms}
         />
       </div>
     );
